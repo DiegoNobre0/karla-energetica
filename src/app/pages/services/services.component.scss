@@ -34,6 +34,10 @@ $font-montserrat: 'Montserrat', sans-serif;
     background-position: center;
     background-attachment: fixed;
 
+     @media (max-width: 768px) {   // ← adiciona isso
+        background-attachment: scroll;
+    }
+
     .hero-overlay {
         position: absolute;
         inset: 0;
