@@ -42,10 +42,10 @@ private checkScroll() {
     if (currentScroll > 100) { 
       if (currentScroll > this.lastScrollPosition) {
         this.isHidden = true;
-        console.log('ESCONDENDO - isHidden:', this.isHidden); // ← log
+        
       } else {
         this.isHidden = false;
-        console.log('MOSTRANDO - isHidden:', this.isHidden); // ← log
+        
       }
     } else {
       this.isHidden = false;
