@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
 
 // --- VARIÁVEIS OFICIAIS DO BRAND BOARD ---
-$color-navy: #051c48;          // Azul Marinho Profundo
-$color-navy-darker: #030f28;   // Azul Marinho mais escuro (transições)
-$color-gold: #d39e36;          // Dourado
-$color-cream: #fcefd7;         // Creme
-$color-sage: #819c79;          // Verde Sálvia
-$color-lilac: #c2a9d1;         // Lilás Suave
+$color-navy: #051c48;
+$color-navy-darker: #030f28;
+$color-gold: #d39e36;
+$color-cream: #fcefd7;
+$color-sage: #819c79;
+$color-lilac: #c2a9d1;
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
 
 /* --- RESET BÁSICO DO COMPONENTE --- */
 .karlinha-theme-body {
-    background-color: $color-navy; // Fundo Azul Marinho Dominante
-    color: $color-cream; // Letras claras em creme
+    background-color: $color-navy;
+    color: $color-cream;
     font-family: $font-montserrat;
     margin: 0;
     padding: 0;
@@ -55,7 +55,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     margin: 15px auto 40px auto;
 }
 
-/* --- 1. HERO SECTION (FOTO KARLA NA PRAIA) --- */
+/* --- 1. HERO SECTION --- */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -73,7 +73,7 @@ $font-montserrat: 'Montserrat', sans-serif;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(5, 28, 72, 0.7); // Máscara Azul Marinho
+        background: rgba(5, 28, 72, 0.7);
         z-index: 1;
     }
 
@@ -111,28 +111,30 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- 2. SEÇÃO ARCANJOS (FUNDO PREENCHIDO E FOCADO NO VITRAL) --- */
+/* --- 2. SEÇÃO ARCANJOS --- */
 .archangels-section {
     position: relative;
-    width: 100%;  
-    min-height: 40rem; 
-    
+    width: 100%;
+    min-height: 40rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-   
-    background-size: cover;     
-    
-    background-position: center 30%; 
-    
-    background-attachment: fixed; // O parallax ajuda a revelar mais da imagem durante o scroll
-    padding: 6rem 2rem; 
+    background-size: cover;
+    padding: 6rem 2rem;
 
+    // ✅ PARALLAX APENAS NO DESKTOP
+    @media (min-width: 961px) {
+        background-attachment: fixed;
+        background-position: center 30%;
+    }
+
+    // ✅ MOBILE: scroll normal + centraliza o anjo
     @media (max-width: 960px) {
-        // No celular (que é vertical), a imagem já encaixa melhor, mas garantimos o foco central.
-        background-position: center center; 
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
         padding: 5rem 1.5rem;
+        min-height: 35rem;
     }
 
     .archangels-overlay {
@@ -141,11 +143,11 @@ $font-montserrat: 'Montserrat', sans-serif;
         left: 0;
         width: 100%;
         height: 100.1%;
-        
-        // Gradiente escuro para dar leitura ao texto, mas preservando o brilho da imagem no centro
-        background: linear-gradient(to bottom,
-                rgba(5, 28, 72, 0.6) 0%,
-                rgba(3, 15, 40, 0.9) 100%); 
+        background: linear-gradient(
+            to bottom,
+            rgba(5, 28, 72, 0.6) 0%,
+            rgba(3, 15, 40, 0.9) 100%
+        );
         z-index: 1;
     }
 
@@ -182,7 +184,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- 3. GRID DE SERVIÇOS (COM A PALETA DA MARCA) --- */
+/* --- 3. GRID DE SERVIÇOS --- */
 .services-section {
     padding: 6rem 2rem;
     max-width: 1200px;
@@ -208,7 +210,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 
     .glass-card {
-        background: rgba(252, 239, 215, 0.03); // Vidro Translúcido Creme
+        background: rgba(252, 239, 215, 0.03);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(211, 158, 54, 0.2);
@@ -247,32 +249,20 @@ $font-montserrat: 'Montserrat', sans-serif;
             color: rgba(252, 239, 215, 0.8);
         }
 
-        /* --- APLICANDO A PALETA DE CORES NOS ÍCONES DOS CARDS --- */
-        &.tarot-card .icon-wrapper mat-icon {
-            color: $color-lilac; // Lilás suave do brand board
-        }
-
-        &.reiki-card .icon-wrapper mat-icon {
-            color: $color-sage; // Verde sálvia do brand board
-        }
-
-        &.mesa-card .icon-wrapper mat-icon {
-            color: $color-cream; // Creme do brand board
-        }
-
-        &.cristal-card .icon-wrapper mat-icon {
-            color: $color-gold; // Dourado
-        }
+        &.tarot-card .icon-wrapper mat-icon { color: $color-lilac; }
+        &.reiki-card .icon-wrapper mat-icon { color: $color-sage; }
+        &.mesa-card .icon-wrapper mat-icon  { color: $color-cream; }
+        &.cristal-card .icon-wrapper mat-icon { color: $color-gold; }
     }
 }
 
-/* --- 4. SEÇÃO SOBRE (FOTO KARLA NA AREIA) --- */
+/* --- 4. SEÇÃO SOBRE --- */
 .about-section {
     display: flex;
     align-items: center;
     gap: 4rem;
     padding: 5rem 10%;
-    background: linear-gradient(to right, $color-navy-darker, $color-navy); // Transição Marinho
+    background: linear-gradient(to right, $color-navy-darker, $color-navy);
 
     @media (max-width: 960px) {
         flex-direction: column;
@@ -291,7 +281,7 @@ $font-montserrat: 'Montserrat', sans-serif;
             border-radius: 15px;
             border-bottom: 5px solid $color-gold;
             border-left: 5px solid $color-gold;
-            box-shadow: -15px 15px 0 rgba(211, 158, 54, 0.1); 
+            box-shadow: -15px 15px 0 rgba(211, 158, 54, 0.1);
         }
     }
 
@@ -335,14 +325,14 @@ button {
 
     &:hover {
         background: $color-gold;
-        color: $color-navy; // Marinho no hover
+        color: $color-navy;
         box-shadow: 0 0 20px rgba(211, 158, 54, 0.4);
     }
 }
 
 .gold-btn-solid {
     background: $color-gold;
-    color: $color-navy; // Letra marinho no fundo dourado
+    color: $color-navy;
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
