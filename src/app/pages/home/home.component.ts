@@ -35,23 +35,10 @@ export class HomeComponent implements OnInit{
  
 
   ngOnInit(){   
-    this.getPosts()
-    this.getPostInstagram()
+   
   }
 
-  getPosts() {    
-    this.bloggerService.getAllPosts().subscribe((response: any) => {
-      // console.log(response)
-      localStorage.setItem('bloggerPosts', JSON.stringify(response.items));    
-    });
-  }   
 
-  getPostInstagram() {    
-    this.instagramService.GetAll().subscribe((response: any) => {  
-      // console.log(response)
-      localStorage.setItem('instagramPosts', JSON.stringify(response.data));   
-    });
-  }
 
   about(): void{    
     this.router.navigate(['/sobre'], { relativeTo: this.route });

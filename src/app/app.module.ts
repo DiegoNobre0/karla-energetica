@@ -15,21 +15,22 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
+import { MatInputModule } from '@angular/material/input';
 
-import {MatInputModule} from '@angular/material/input';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-
-import {MatRadioModule} from '@angular/material/radio';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaskedTextBoxModule } from '@progress/kendo-angular-inputs';
 import { HomeComponent } from './pages/home/home.component';
@@ -51,7 +52,7 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    AboutComponent,    
+    AboutComponent,
     ServicesComponent,
     BloggerComponent,
     PostBloggerComponent,
@@ -63,7 +64,7 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
   imports: [
     BrowserModule,
     GoogleMapsModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
@@ -85,12 +86,14 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
     MatSnackBarModule,
     MatTableModule,
     MaskedTextBoxModule,
-    
+    SidebarModule,
+    ButtonModule
+
   ],
   providers: [
     {
-      provide: {MAT_DIALOG_DEFAULT_OPTIONS, HTTP_INTERCEPTORS},
-      useValue: {hasBackdrop: true},
+      provide: { MAT_DIALOG_DEFAULT_OPTIONS, HTTP_INTERCEPTORS },
+      useValue: { hasBackdrop: true },
       // useClass: AuthInterceptor,
       multi: true
     }

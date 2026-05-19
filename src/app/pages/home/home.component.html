@@ -1,112 +1,87 @@
-<div class="div-body">
-    <div class="display-mobile">
-        <!-- <div style="width: 100%;">
-            <div class="image-container">
-                <img class="image-container-2" src="../../../assets/foto12.jpeg">
-                <div class="overlay"></div>
-                <div class="overlay-text div-calculo-dose-2">
-                    <span class="name-home">Erica Martins</span>
-                    <hr class="style-hr">
-                    <span style="font-size: 20px">Psicanalista e Hipnoterapeuta</span>
-                </div>
-            </div>
-        </div> -->
-        <div class="image-container-3" style="color: white;">
-            <div class="overlay"></div>
-            <div class="overlay-text div-calculo-dose-2">
-                <span class="name-home-2">ERICA MARTINS</span>
-                <hr class="style-hr" style="margin-left: 10rem;">
-                <span style="font-size: 25px; margin-left: 17rem;">Terapeuta Transpessoal</span>
-            </div>
+<div class="karlinha-theme-body">
+    
+    <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="title-cinzel">KARLA TAVARES</h1>
+            <hr class="gold-divider">
+            <h2 class="subtitle-montserrat">Transformo o seu caos interno em clareza</h2>
+            <p class="hero-description">Tarot Terapêutico • Reiki • Mesa Radiônica</p>
+            
+            <button class="gold-btn-solid" (click)="whatsapp()">
+                <mat-icon>calendar_month</mat-icon>
+                Agendar Minha Sessão
+            </button>
         </div>
-        <div style="width: 100%;" class="image-desktop">         
-            <span>
-                <img class="image-container-2" src="../../../assets/erica6.jpg">               
-            </span>         
-        </div>       
-    </div>
-    <div class="text-name">   
-        <div class="div-calculo-dose-2 ">
-            <span class="spam-flex-justify name-home">ERICA MARTINS</span>    
-            <hr class="style-hr">     
-            <span class="spam-flex-justify" style="font-size: 20px">Terapeuta Transpessoal</span>   
-        </div> 
-        <div class="div-calculo-dose-cards">
-            <div class="div-calculo-dose">
-                <div class="card card-border-1">
-                    <div class="div-flex-center">
-                        <mat-icon class="icon-calculo">support_agent</mat-icon>
-                    </div>
-                    <div class="div-flex-center">
-                        <p class="div-calculo-dose-cards">ATENDIMENTO ON-LINE</p>
-                    </div>
-                </div>
-                <div class="card card-border-1"  >
-                    <div class="div-flex-center">
-                        <mat-icon class="icon-calculo">group</mat-icon>
-                    </div>
-                    <div class="div-flex-center">
-                        <p class="div-calculo-dose-cards">ATENDIMENTO PRESENCIAL</p>
-                    </div>
-                </div>
-                <div class="card card-border-1"  >
-                    <div class="div-flex-center">
-                        <mat-icon class="icon-calculo">pending_actions</mat-icon>
-                    </div>
-                    <div class="div-flex-center">
-                        <p class="div-calculo-dose-cards">HORÁRIO FLEXIVEL</p>
-                    </div>
-                </div>
-                <div class="card card-border-1">
-                    <div class="div-flex-center">
-                        <mat-icon class="icon-calculo">handshake</mat-icon>
-                    </div>
-                    <div class="div-flex-center">
-                        <p class="div-calculo-dose-cards">ACESSÍVEL</p>
-                    </div>
-                </div>                
-            </div>
-        </div>
-        <hr class="style-hr">  
-    </div>
+    </section>
 
-    <div class="div-sobre">
-        <div class="image-container2 div-foto" >
-            <!-- Aqui vai a imagem -->           
-            <img src="./../../assets/erica4.jpg">
+    <section class="archangels-section" style="background-image: url('https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/Gemini_Generated_Image_y4gdt5y4gdt5y4gd%20(1).png');">
+        <div class="archangels-overlay"></div>
+        <div class="archangels-content">
+            <h3 class="title-cinzel text-gold">A FORÇA DA TRÍADE</h3>
+            <p class="archangels-text">
+                Sob a proteção e irradiação dos Arcanjos Miguel, Gabriel e Rafael. <br>
+                Um espaço ancorado na luz para limpeza, abertura de caminhos e cura profunda do seu campo energético.
+            </p>
         </div>
-        <div class="text-container div-info " style="color: #1C3D69;">   
-            <div style="padding-bottom: 1rem;">
-                <p class="no-margin">Olá! Meu nome é</p>
-                <p class="name-home no-margin" style="font-size: 25px;">ERICA MARTINS</p>
-                <p class="name-home no-margin" style="font-size: 25px;">Terapeuta Transpessoal</p>
+    </section>
+
+    <section class="services-section">
+        <div class="section-header">
+            <h3 class="title-cinzel text-gold">Caminhos de Cura</h3>
+            <hr class="gold-divider-small">
+        </div>
+
+        <div class="cards-grid">
+            <div class="glass-card tarot-card" routerLink="/services/tarot">
+                <div class="icon-wrapper">
+                    <mat-icon>auto_awesome</mat-icon>
+                </div>
+                <h4>Tarot Terapêutico</h4>
+                <p>Leitura profunda para direcionamento e autoconhecimento.</p>
             </div>
-            <div class="p-text-info">
-                <p >
-                   Sou Erica Martins, Terapeuta Transpessoal com ampla experiência clínica, 
-                   dedicada a promover o equilíbrio entre mente, corpo e espírito. Minha atuação integra abordagens
-                    energéticas e holísticas que possibilitam uma jornada profunda de autoconhecimento, cura e transformação pessoal.
-                </p>
-            </div>      
-            <div class="div-button" style="width: 100%;">
-                <div class="card-button " style="display: flex; background-color:#1C3D69;justify-content: space-evenly; height: 4rem;" >
-                    <div class="div-flex-center marg-icon-wpp">                        
-                        <mat-icon svgIcon="whatsapp" class="icon-wpp"></mat-icon>
-                    </div>
-                    <div class="div-flex-center marg-text-wpp">
-                        <p class="div-calculo-dose-cards text-wpp" style="font-size: 12px;" (click)="whatsapp()">AGENDAR VIA WHATSAPP</p>
-                    </div>
+
+            <div class="glass-card reiki-card" routerLink="/services/reiki">
+                <div class="icon-wrapper">
+                    <mat-icon>spa</mat-icon>
                 </div>
-                <div class="card-button " style="background-color:#1C3D69; height: 4rem;" >                
-                    <div class="div-flex-center">
-                        <p class="div-calculo-dose-cards text-wpp" style="padding-top: 0.8rem; font-size:12px" (click)="about()">CONHEÇA MAIS</p>
-                    </div>
+                <h4>Sessões de Reiki</h4>
+                <p>Alinhamento dos chakras e reequilíbrio vital.</p>
+            </div>
+
+            <div class="glass-card mesa-card" routerLink="/services/mesa-radionica">
+                <div class="icon-wrapper">
+                    <mat-icon>diamond</mat-icon>
                 </div>
-            </div>  
-        </div>  
-    </div>
+                <h4>Mesa Radiônica</h4>
+                <p>Transmutação de energias e quebra de bloqueios.</p>
+            </div>
+
+            <div class="glass-card cristal-card" routerLink="/services/cristaloterapia">
+                <div class="icon-wrapper">
+                    <mat-icon>self_improvement</mat-icon>
+                </div>
+                <h4>Cristaloterapia</h4>
+                <p>A força da natureza atuando no seu campo físico e emocional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Karla Tavares na Praia">
+        </div>
+        <div class="about-text">
+            <p class="subtitle-montserrat text-gold">Minha Essência</p>
+            <h3 class="title-cinzel">Quem é Karla Tavares?</h3>
+            <p>
+                Minha conexão com a espiritualidade não nasceu do conforto. Nasceu das provações, dos silêncios e da necessidade de me sustentar quando tudo pedia força interna. 
+            </p>
+            <p>
+                Eu não caminho pela espiritualidade como quem foge da vida. Caminho como quem aprendeu a atravessá-la. Hoje, dedico minha energia para ajudar você a expandir, limpar e alinhar sua própria vibração.
+            </p>
+            <button class="gold-btn-solid" (click)="about()">Conheça minha jornada</button>
+        </div>
+    </section>
+
 </div>
-
-
-
-

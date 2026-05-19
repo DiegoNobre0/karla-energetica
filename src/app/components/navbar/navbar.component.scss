@@ -1,112 +1,119 @@
-.div-logo{
-    width: 57%;
+/* --- IMPORTAÇÃO DE FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
+
+// --- VARIÁVEIS OFICIAIS DO BRAND BOARD ---
+$color-navy: #051c48;
+$color-gold: #d39e36;
+$color-cream: #fcefd7;
+$font-cinzel: 'Cinzel', serif;
+$font-montserrat: 'Montserrat', sans-serif;
+
+// --- TRANSIÇÃO PRINCIPAL ---
+.nav-transition {
+    // Transição suave para fundo, padding e posicionamento
+    transition: background-color 0.4s ease, padding 0.4s ease, transform 0.4s ease-in-out;
 }
 
-.img-logo{
-    height: 10.5rem;
-    width: 10.5rem;
-    padding-left: 2rem;
-    margin-top: -1rem;
+// --- CLASSE QUE ESCONDE O MENU (Desliza para cima) ---
+.nav-hidden {
+    transform: translateY(-100%);
 }
 
-.display-mobile-menu{
-    @media (max-width: 990px){
-        display: none;
-    }
+// --- ESTADOS DO SCROLL ---
+
+// Estado 1: Quando rola a página (Fundo Marinho, mais fino)
+.nav-scrolled-state {
+    background-color: rgba(5, 28, 72, 0.95); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(211, 158, 54, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding-top: 0.5rem; // Padding menor (py-2)
+    padding-bottom: 0.5rem;
 }
 
-.display-mobile-accordion{
-    display: none;
-    @media (max-width: 990px){
-        display: contents;
-    }
-}
-
-.toolbar-spacer {
-    flex : 1  1 auto;
-}
-
-.span-toolbar{
-    // color: #CEA44B;
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-
-}
-
-.span-toolbar:hover {
-    color:#CEA44B;
-}
-
-button.mat-button {
-    background: none;
+// Estado 2: No topo absoluto da página (Transparente, mais alto)
+.nav-transparent-state {
+    background-color: transparent; 
+    border-bottom: 1px solid transparent;
     box-shadow: none;
+    padding-top: 1.5rem; // Padding maior para respirar no topo (py-4)
+    padding-bottom: 1.5rem;
 }
+// --- LINKS DO NAVBAR DESKTOP ---
+.nav-link {
+    font-family: $font-montserrat !important;
+    color: $color-cream !important;
+    transition: all 0.3s ease !important;
 
-/* Remover sombra e contorno quando o botão está em foco ou hover */
-button.mat-button:hover,
-button.mat-button:focus,
-button.mat-button:active {
-    background: none;
-    box-shadow: none;
-    outline: none;
-}
-
-.mat-toolbar-mobile{
-    transition: all 0.3s ease-out;
-    padding: 1rem 0rem 0rem 0rem;
-    display: none;
-    justify-content: center;
-    position: fixed;
-    z-index: 9;
-    // height: 7rem;
-    margin-top: -1rem;
-    @media (max-width: 990px){
-        display: block;
-        background:#fff;
+    &:hover {
+        color: $color-gold !important;
+        text-shadow: 0 0 10px rgba(211, 158, 54, 0.4);
     }
 }
 
-.mat-toolbar-desktop{
-    transition: all 0.3s ease-out;
-    padding: 1rem 2rem 0rem 0rem;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    z-index: 9;
-    height: 7rem;
-    margin-top: -1rem;
-    @media (max-width: 990px){
-        display: none;
-        background:#fff;
-    }
+// Tira o fundo cinza feio ao clicar no botão do PrimeNG
+:host ::ng-deep .p-button.p-button-text:focus {
+    background: rgba(255, 255, 255, 0.05);
 }
 
+.tracking-wide {
+    letter-spacing: 1.5px;
+}
 
-::ng-deep .custom-dialog-container-login {
-    mat-dialog-container {
-      position: fixed;
-      display: block;
-      z-index: 11;
-      width: 30rem;
-      height: 25rem;
-      left: 36%;
-      top: 4%;
-      background-color: rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3px);
+// --- CUSTOMIZAÇÃO DA SIDEBAR MOBILE ---
+::ng-deep .custom-sidebar {
+    background-color: $color-navy !important;
+    width: 300px !important;
+    border-left: 3px solid $color-gold !important;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6) !important;
 
-      @media (max-width: 990px){
-        position: fixed;
-        display: block;
-        z-index: 11;
-        width: 100%;
-        height: 35rem;
-        left: 10%;
-        top: 10%;
-        padding: 1rem 1rem 7rem 1rem;
+    .p-sidebar-close {
+        width: 3rem !important;
+        height: 3rem !important;
+        color: $color-gold !important;
+        background: transparent !important;
+        border-radius: 50%;
+        top: 1rem !important;
+        right: 1rem !important;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: rgba(211, 158, 54, 0.1) !important;
+            transform: rotate(90deg);
+        }
+
+        &:focus {
+            box-shadow: none !important;
         }
     }
+
+    .p-sidebar-content {
+        padding: 2rem 1.5rem !important;
+    }
 }
 
+// Botões da Sidebar
+.mobile-nav-btn {
+    font-family: $font-cinzel !important;
+    font-size: 1.3rem !important;
+    color: $color-cream !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    width: 100%;
+    padding: 1.2rem !important;
+    border-bottom: 1px solid rgba(211, 158, 54, 0.15) !important;
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
 
+    &:hover {
+        color: $color-gold !important;
+        background-color: transparent !important;
+        letter-spacing: 2px !important;
+        border-bottom-color: $color-gold !important;
+    }
+
+    &:focus {
+        background: transparent !important;
+    }
+}

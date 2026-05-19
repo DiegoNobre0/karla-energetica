@@ -1,68 +1,65 @@
-<mat-toolbar class="mat-toolbar-mobile">
-    <!-- NavBar mobile -->
-    <mat-accordion class="display-mobile-accordion ">
-        <mat-expansion-panel
-         hideToggle
-         style="background: white; color: #CEA44B;"
-         (opened)="panelOpenState = true"
-         (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                <div class="div-logo display-mobile-menu">
-                    <img class="img-logo" src="../../../assets/logo-png-ws.png" (click)="home()">
-                </div>
-                <button mat-icon-button >
-                    <mat-icon style="color: #CEA44B;">{{panelOpenState? "close" : "menu"}}</mat-icon>
-                </button>
-            </mat-panel-title>
-            <mat-panel-description style="display: contents;">
-               
-            </mat-panel-description>
-          </mat-expansion-panel-header >
-            <div style="display: grid;">
-                <button mat-button (click)="home()">
-                    <span class="span-toolbar" style="color: #CEA44B;">HOME</span>
-                </button>  
-                <button mat-button (click)="about()">
-                    <span class="span-toolbar" style="color: #CEA44B;">SOBRE</span>
-                </button> 
-                <button mat-button (click)="service()">
-                    <span class="span-toolbar" style="color: #CEA44B;">SERVIÇOS</span>
-                </button> 
-                <!-- <button mat-button (click)="blog()">
-                    <span class="span-toolbar" style="color: #CEA44B;">BLOG</span>
-                </button>  -->
-                <button mat-button (click)="contact()">
-                    <span class="span-toolbar" style="color: #CEA44B;">CONTATO</span>
-                </button>    
-            </div>
-        </mat-expansion-panel>
-      </mat-accordion> 
-</mat-toolbar>
+<div class="fixed w-full top-0 z-5 nav-transition" 
+     [ngClass]="{
+        'nav-scrolled-state': isScrolled, 
+        'nav-transparent-state': !isScrolled,
+        'nav-hidden': isHidden
+     }">
 
-<mat-toolbar id="nav" class="mat-toolbar-desktop">    
-    <div class="div-logo display-mobile-menu">
-        <img *ngIf="showWhiteLogo" class="img-logo" src="../../../assets/IMG_8855.PNG" (click)="home()">
-        <img *ngIf="showDefaultLogo" class="img-logo" src="../../../assets/IMG_8855.PNG" (click)="home()">
-      </div>
-    <span class="toolbar-spacer display-mobile-menu"></span>
-    <div class="display-mobile-menu">
-        <button mat-button (click)="home()">
-            <span class="span-toolbar">HOME</span>
-        </button>  
-        <button mat-button (click)="about()">
-            <span class="span-toolbar">SOBRE</span>
-        </button> 
-        <button mat-button (click)="service()">
-            <span class="span-toolbar">SERVIÇOS</span>
-        </button> 
-        <!-- <button mat-button (click)="blog()">
-            <span class="span-toolbar">BLOG</span>
-        </button>  -->
-        <button mat-button (click)="contact()">
-            <span class="span-toolbar">CONTATO</span>
-        </button>    
-     
+    <div class="flex align-items-center justify-content-between px-4 md:px-6">
+
+        <div class="cursor-pointer z-5" (click)="navigate('/')">
+            <img src="https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/IMG_4251.PNG" alt="Logo Reiki do Comando"
+                class="transition-duration-300 w-auto" [ngClass]="isScrolled ? 'h-4rem' : 'h-6rem md:h-8rem'">
+        </div>
+
+        <div class="hidden md:flex align-items-center gap-4">
+            <button pButton pRipple label="HOME"
+                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
+                (click)="navigate('/')"></button>
+
+            <button pButton pRipple label="SOBRE"
+                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
+                (click)="navigate('/sobre')"></button>
+
+            <button pButton pRipple label="SERVIÇOS"
+                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
+                (click)="navigate('/servicos')"></button>
+
+            <button pButton pRipple label="CONTATO"
+                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
+                (click)="navigate('/contato')"></button>
+        </div>
+
+        <div class="md:hidden block z-5">
+            <button pButton pRipple icon="pi pi-bars" class="p-button-rounded p-button-text p-button-lg"
+                style="color: #d39e36;" (click)="sidebarVisible = true"></button>
+        </div>
     </div>
-</mat-toolbar>
+</div>
 
+<p-sidebar [(visible)]="sidebarVisible" position="right" [baseZIndex]="10000" styleClass="custom-sidebar">
+    
+    <div class="flex flex-column align-items-center mt-2">
+        
+        <img src="https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/IMG_4251.PNG" class="h-8rem mb-4 mt-0" alt="Logo Karla">
+        
+        <div class="w-full flex flex-column gap-2">
+            
+            <button pButton pRipple label="HOME" 
+                    class="p-button-text mobile-nav-btn" 
+                    (click)="navigate('/')"></button>
+                    
+            <button pButton pRipple label="SOBRE" 
+                    class="p-button-text mobile-nav-btn" 
+                    (click)="navigate('/sobre')"></button>
+                    
+            <button pButton pRipple label="SERVIÇOS" 
+                    class="p-button-text mobile-nav-btn" 
+                    (click)="navigate('/servicos')"></button>
+                    
+            <button pButton pRipple label="CONTATO" 
+                    class="p-button-text mobile-nav-btn" 
+                    (click)="navigate('/contato')"></button>
+        </div>
+    </div>
+</p-sidebar>
