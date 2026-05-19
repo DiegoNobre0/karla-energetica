@@ -1,17 +1,18 @@
-/* --- IMPORTAÇÃO DE FONTES (Styles Globais) --- */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
 
-// --- VARIÁVEIS OFICIAIS DO BRAND BOARD ---
+// --- VARIÁVEIS ---
 $color-navy: #051c48;
 $color-navy-darker: #030f28;
 $color-gold: #d39e36;
 $color-cream: #fcefd7;
 $color-sage: #819c79;
 $color-lilac: #c2a9d1;
+$color-serene-blue: #d4e0fa;
+
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
 
-/* --- RESET BÁSICO DO COMPONENTE --- */
+/* --- BASE --- */
 .karlinha-theme-body {
     background-color: $color-navy;
     color: $color-cream;
@@ -22,7 +23,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     width: 100%;
 }
 
-/* --- TIPOGRAFIA COMPARTILHADA --- */
+/* --- TIPOGRAFIA --- */
 .title-cinzel {
     font-family: $font-cinzel;
     font-weight: 600;
@@ -35,9 +36,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     letter-spacing: 1px;
 }
 
-.text-gold {
-    color: $color-gold !important;
-}
+.text-gold { color: $color-gold !important; }
 
 .gold-divider {
     width: 150px;
@@ -55,7 +54,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     margin: 15px auto 40px auto;
 }
 
-/* --- 1. HERO SECTION --- */
+/* --- 1. HERO --- */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -69,10 +68,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
     .hero-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: rgba(5, 28, 72, 0.7);
         z-index: 1;
     }
@@ -88,18 +84,14 @@ $font-montserrat: 'Montserrat', sans-serif;
             color: #ffffff;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
-            @media (max-width: 768px) {
-                font-size: 2.5rem;
-            }
+            @media (max-width: 768px) { font-size: 2.5rem; }
         }
 
         h2 {
             font-size: 1.5rem;
             color: $color-cream;
 
-            @media (max-width: 768px) {
-                font-size: 1.2rem;
-            }
+            @media (max-width: 768px) { font-size: 1.2rem; }
         }
 
         .hero-description {
@@ -111,7 +103,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- 2. SEÇÃO ARCANJOS --- */
+/* --- 2. ARCANJOS --- */
 .archangels-section {
     position: relative;
     width: 100%;
@@ -122,13 +114,11 @@ $font-montserrat: 'Montserrat', sans-serif;
     background-size: cover;
     padding: 6rem 2rem;
 
-    // ✅ PARALLAX APENAS NO DESKTOP
     @media (min-width: 961px) {
         background-attachment: fixed;
         background-position: center 30%;
     }
 
-    // ✅ MOBILE: scroll normal + centraliza o anjo
     @media (max-width: 960px) {
         background-attachment: scroll;
         background-position: center center;
@@ -139,10 +129,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
     .archangels-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100.1%;
+        inset: 0; // CORRIGIDO: era height: 100.1% (hack)
         background: linear-gradient(
             to bottom,
             rgba(5, 28, 72, 0.6) 0%,
@@ -164,9 +151,7 @@ $font-montserrat: 'Montserrat', sans-serif;
             color: $color-gold;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 
-            @media (max-width: 768px) {
-                font-size: 2rem;
-            }
+            @media (max-width: 768px) { font-size: 2rem; }
         }
 
         .archangels-text {
@@ -184,46 +169,61 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- 3. GRID DE SERVIÇOS --- */
+/* --- 3. SERVIÇOS --- */
 .services-section {
+    background-color: $color-serene-blue;
     padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     text-align: center;
 
-    .section-header h3 {
-        font-size: 2.5rem;
+    .section-header {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        h3 {
+            font-size: 2.5rem;
+            color: $color-navy !important;
+        }
     }
 
     .cards-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 600px)  { grid-template-columns: 1fr; }
+    }
 
-        @media (max-width: 600px) {
-            grid-template-columns: 1fr;
-        }
+    .services-cta {
+        margin-top: 3rem;
     }
 
     .glass-card {
-        background: rgba(252, 239, 215, 0.03);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(211, 158, 54, 0.2);
+        // Fallback para browsers sem backdrop-filter
+        background: rgba(255, 255, 255, 0.75);
+
+        // Progressive enhancement
+        @supports (backdrop-filter: blur(10px)) {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        border: 1px solid rgba(255, 255, 255, 0.8);
         border-radius: 15px;
         padding: 2.5rem 1.5rem;
         cursor: pointer;
         transition: all 0.4s ease;
+        box-shadow: 0 4px 15px rgba(5, 28, 72, 0.05);
 
         &:hover {
             transform: translateY(-10px);
-            background: rgba(252, 239, 215, 0.08);
+            background: rgba(255, 255, 255, 0.8);
             border-color: $color-gold;
-            box-shadow: 0 10px 30px rgba(211, 158, 54, 0.2);
+            box-shadow: 0 10px 30px rgba(5, 28, 72, 0.15);
         }
 
         .icon-wrapper {
@@ -238,31 +238,36 @@ $font-montserrat: 'Montserrat', sans-serif;
 
         h4 {
             font-family: $font-cinzel;
-            font-size: 1.3rem;
-            color: #ffffff;
+            font-size: 1.1rem;
+            color: $color-navy-darker;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         p {
             font-size: 0.95rem;
             line-height: 1.5;
-            color: rgba(252, 239, 215, 0.8);
+            color: $color-navy;
+            font-weight: 400;
         }
 
-        &.tarot-card .icon-wrapper mat-icon { color: $color-lilac; }
-        &.reiki-card .icon-wrapper mat-icon { color: $color-sage; }
-        &.mesa-card .icon-wrapper mat-icon  { color: $color-cream; }
-        &.cristal-card .icon-wrapper mat-icon { color: $color-gold; }
+        &.tarot-card      .icon-wrapper mat-icon { color: #8e68b0; }
+        &.reiki-card      .icon-wrapper mat-icon { color: #5a7a51; }
+        &.mesa-card       .icon-wrapper mat-icon { color: #4a6fa5; } // CORRIGIDO: era $color-navy (sumia no hover)
+        &.cristal-card    .icon-wrapper mat-icon { color: #b8861e; }
+        &.cromo-card      .icon-wrapper mat-icon { color: #c47d2e; }
+        &.limpeza-card    .icon-wrapper mat-icon { color: #7a6aa5; }
+        &.alinhamento-card .icon-wrapper mat-icon { color: #4a8a6f; }
     }
 }
 
-/* --- 4. SEÇÃO SOBRE --- */
+/* --- 4. SOBRE --- */
 .about-section {
     display: flex;
     align-items: center;
     gap: 4rem;
     padding: 5rem 10%;
-    background: linear-gradient(to right, $color-navy-darker, $color-navy);
+    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%)); // CORRIGIDO: era hardcoded
 
     @media (max-width: 960px) {
         flex-direction: column;
@@ -302,19 +307,8 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- BOTÕES DO TEMA --- */
-button {
-    cursor: pointer;
-    font-family: $font-montserrat;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
+/* --- BOTÕES --- */
+// CORRIGIDO: seletores específicos em vez de "button" global
 .gold-btn-outline {
     background: transparent;
     color: $color-gold;
@@ -322,6 +316,14 @@ button {
     padding: 15px 30px;
     border-radius: 30px;
     margin-top: 30px;
+    cursor: pointer;
+    font-family: $font-montserrat;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
 
     &:hover {
         background: $color-gold;
@@ -337,6 +339,15 @@ button {
     padding: 15px 30px;
     border-radius: 30px;
     margin-top: 10px;
+    cursor: pointer;
+    font-family: $font-montserrat;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
 
     &:hover {
         background: #ffffff;

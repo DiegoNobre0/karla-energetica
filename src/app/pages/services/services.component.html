@@ -1,132 +1,133 @@
-<div class="div-body">
-    <div class="display-mobile">
-        <div style="width: 100%;">
-            <span>
-                <img class="image-container" src="../../../assets/outer-space-background.jpg">
-            </span>
-        </div>
-    </div>
-    <div class="text-name">
-        <div class="div-calculo-dose-2">
-            <span class="spam-flex-justify name-home">SERVIÇOS</span>
-            <hr class="style-hr">
-        </div>
-    </div>
+<div class="karlinha-service-body" *ngIf="service">
 
-    <div class="div-sobre">
-        <div class="text-container div-info" style="color: #1C3D69;">
-            <div style="padding-bottom: 1rem;">
-                <p class="name-home no-margin" style="font-size: 25px; text-align: center;">EU TRABALHO COM</p>
-                <hr class="style-hr" style="margin-top: 0;">
-            </div>      
-          
-            <div class="p-text-info">
-                <p class="no-margin pb">Tratamento para Ansiedade</p>
-                <p class="no-margin pb">Tratamento para a Depressão</p>
-                <p class="no-margin pb">Tratamento para Transtornos de Humor</p>
-                <p class="no-margin pb">Relacionamentos</p>
-                <p class="no-margin pb">Sexualidade</p>
-                <p class="no-margin pb">Autoconhecimento</p>
-                <p class="no-margin pb">Outros</p>
-            </div>
-          
-          
-            <!-- <div class="div-button" style="width: 100%;">
-                <div class="card-button "
-                    style="display: flex; background-color: #1C3D69;justify-content: space-evenly; height: 4rem;">
-                    <div class="div-flex-center marg-icon-wpp">
-                        <mat-icon svgIcon="whatsapp" class="icon-wpp"></mat-icon>
-                    </div>
-                    <div class="div-flex-center marg-text-wpp">
-                        <p class="div-calculo-dose-cards text-wpp" style="font-size: 12px;">AGENDE SUA CONSULTA</p>
-                    </div>
-                </div>               
-            </div> -->
+    <!-- ======================== HERO ======================== -->
+    <section class="hero-service" [style.backgroundImage]="getBgImage(service.heroImage)">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">    
+            <h1 class="title-cinzel text-gold">{{ service.title }}</h1>
+            <hr class="gold-divider">
+            <p class="hero-subtitle">{{ service.subtitle }}</p>
         </div>
-        <!-- <div class="image-container2 div-foto">            
-            <img src="./../../assets/foto4.jpeg">
-        </div> -->
-    </div>
-    <div class="div-sobre" style="background-color: white;">
-        <div class="text-container div-info" style="color: #1C3D69;">
-            <div style="padding-bottom: 1rem;">
-                <p class="name-home no-margin" style="font-size: 25px; text-align: left;">TERAPIA PRESENCIAL</p>
-                <hr class="style-hr" style="margin-top: 0; margin-left: 0;">
-            </div>      
-          
-            <div class="p-text-info">
-                <p class="no-margin pb" style="text-align: justify;">
-                    Como é a terapia presencial?
-                </p>    
-                <p class="no-margin pb" style="text-align: justify;">
-                    O paciente deve se deslocar até o consultório da psicanalista em um horário previamente combinado.
-                    As sessões costumam durar de 40 até 60 minutos. No meu consultório você vai encontrar o divã, que
-                    é o dispositivo que uso para atender na abordagem psicanalítica.
-                </p>   
-                <p class="no-margin pb" style="text-align: justify;">
-                    Você pode marcar uma primeira consulta comigo para entender se a terapia presencial
-                    é adequada para você neste momento.
-                </p>           
-            </div>         
-        </div>  
-        <div class="text-container div-info" style="color: #1C3D69;">
-            <div style="padding-bottom: 1rem;">
-                <p class="name-home no-margin" style="font-size: 25px; text-align: left;">TERAPIA ON-LINE</p>
-                <hr class="style-hr" style="margin-top: 0; margin-left: 0;">
-            </div>      
-          
-            <div class="p-text-info">
-                <p class="no-margin pb" style="text-align: justify;">
-                    Recomendo esta modalidade de terapia para quem deseja estar no conforto de sua casa ou enquanto estão em viagem.
-                    A terapia online pode ser uma boa opção caso você tenha uma agenda muito ocupada ou realize muitas viagens, 
-                    se você tiver alguma restrição que o (a) impeça de ir até o local, se você luta contra depressão severa e
-                     encontra dificuldades de sair de casa ou se estiver em um local onde os serviços terapêuticos não estejam disponíveis.
-                </p>    
-                <p class="no-margin pb" style="text-align: justify;">
-                    Esta modalidade utiliza de tecnologias como chamada de vídeo ou telefone para ajudar as pessoas a melhorarem
-                     seu bem-estar mental e emocional. Você pode marcar uma primeira consulta comigo para entender se a terapia 
-                     online é adequada para você neste momento.
-                </p>              
-            </div>         
-        </div> 
-        <div class="text-container div-info" style="color: #1C3D69;">
-            <div style="padding-bottom: 1rem;">
-                <p class="name-home no-margin" style="font-size: 25px; text-align: left;">ATENDIAMENTO SOCIAL</p>
-                <hr class="style-hr" style="margin-top: 0; margin-left: 0;">
-            </div>      
-          
-            <div class="p-text-info">
-                <p class="no-margin pb" style="text-align: justify;">
-                    O atendimento social busca democratizar o serviço da psicanalise e permitir o acesso a pessoas que,
-                    em decorrência de seu contexto social e/ou econômico, tenham dificuldade de ter acesso a serviços de 
-                    saúde mental.
-                </p>    
-                <p class="no-margin pb" style="text-align: justify;">
-                    A finalidade é proporcionar, com responsabilidade técnica e ética, promovendo o respeito,
-                    a dignidade, a igualdade, a saúde e a busca pela qualidade de vida.
-                </p> 
-                <p class="no-margin pb" style="text-align: justify;">
-                    * sujeito à disponibilidade de vagas e horários em agenda específica para esse fim. Os critérios de avaliação do perfil
-                     social são estabelecidos pelo profissional.
-                </p>                
-            </div>         
-        </div>     
-    </div>
-    <div class="div-sobre">
-        <div class="text-container div-info" style="color: #1C3D69;">
-            <div style="padding-bottom: 1rem;">
-                <p class="name-home no-margin" style="font-size: 25px; text-align: center;">GOSTARIA DE AGENDAR UM ENCONTRO?</p>
-                <hr class="style-hr" style="margin-top: 0;">
-            </div> 
-            <div class="div-button" style="width: 100%;">
-                <div class="card-button "
-                    style="display: flex; background-color: #1C3D69;justify-content: space-evenly; height: 4rem;">
-                   
-                    <div class="div-flex-center marg-text-wpp">
-                        <p class="div-calculo-dose-cards text-wpp" style="font-size: 12px;" (click)="whatsapp()">SOLICITAR INFORMAÇÕES</p>
+        <div class="hero-scroll-hint">
+            <span>Role para descobrir</span>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+    </section>
+
+    <!-- ======================== CITAÇÃO ======================== -->
+    <section class="quote-section">
+        <div class="quote-inner">
+            <mat-icon class="quote-icon">format_quote</mat-icon>
+            <p class="quote-text title-cinzel">{{ service.quote }}</p>
+        </div>
+    </section>
+
+    <!-- ======================== INTRODUÇÃO ======================== -->
+    <section class="intro-section">
+        <div class="intro-grid">
+            <div class="intro-image-col">
+                <div class="intro-img-wrapper">
+                    <img [src]="service.heroImage" [alt]="service.title" />
+                    <div class="intro-img-badge">
+                        <mat-icon>schedule</mat-icon>
+                        <span>{{ service.duration }}</span>
                     </div>
-                </div>               
+                </div>
             </div>
-        </div>        
-    </div>
+            <div class="intro-text-col">
+                <p class="label-overline text-gold">SOBRE A PRÁTICA</p>
+                <h2 class="title-cinzel text-navy">O QUE É<br>{{ service.title }}?</h2>
+                <hr class="gold-divider" style="margin: 1.5rem 0;">
+                <p class="text-description">{{ service.description }}</p>
+                <p class="session-info-text">{{ service.sessionInfo }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== BENEFÍCIOS ======================== -->
+    <section class="benefits-section">
+        <div class="section-header text-center">
+            <p class="label-overline text-gold">POR QUE ESCOLHER</p>
+            <h2 class="title-cinzel">O QUE VOCÊ RECEBE</h2>
+            <hr class="gold-divider">
+        </div>
+        <div class="cards-grid">
+            <div class="benefit-card" *ngFor="let b of service.benefits; let i = index">
+                <div class="card-number">0{{ i + 1 }}</div>
+                <mat-icon>{{ b.icon }}</mat-icon>
+                <h3>{{ b.title }}</h3>
+                <p>{{ b.desc }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== COMO FUNCIONA ======================== -->
+    <section class="process-section div-curva-top">
+        <div class="section-header text-center">
+            <p class="label-overline" style="color: rgba(211,158,54,0.7);">PASSO A PASSO</p>
+            <h2 class="title-cinzel text-gold">COMO FUNCIONA</h2>
+            <hr class="gold-divider">
+        </div>
+        <div class="process-steps">
+            <div class="process-step" *ngFor="let step of service.process; let last = last">
+                <div class="step-number title-cinzel">{{ step.step }}</div>
+                <div class="step-connector" *ngIf="!last"></div>
+                <div class="step-content">
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== MODALIDADES ======================== -->
+    <section class="modalities-section">
+        <div class="section-header text-center">
+            <p class="label-overline" style="color: rgba(211,158,54,0.7);">COMO ATENDO</p>
+            <h2 class="title-cinzel text-gold">MODALIDADES</h2>
+            <hr class="gold-divider">
+        </div>
+        <div class="modalities-container">
+            <div class="modality-box">
+                <div class="modality-icon-wrap">
+                    <mat-icon>location_on</mat-icon>
+                </div>
+                <h3 class="title-cinzel text-gold">PRESENCIAL</h3>
+                <p class="modality-location">Camaçari, Bahia</p>
+                <hr class="gold-divider-small">
+                <p>{{ service.presencialDesc }}</p>
+            </div>
+            <div class="modality-divider">
+                <span class="title-cinzel">ou</span>
+            </div>
+            <div class="modality-box">
+                <div class="modality-icon-wrap">
+                    <mat-icon>wifi</mat-icon>
+                </div>
+                <h3 class="title-cinzel text-gold">ON-LINE</h3>
+                <p class="modality-location">Qualquer lugar do mundo</p>
+                <hr class="gold-divider-small">
+                <p>{{ service.onlineDesc }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CTA FINAL ======================== -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <div class="cta-star-decoration">✦</div>
+            <h2 class="title-cinzel">PRONTA PARA INICIAR<br>SUA JORNADA?</h2>
+            <hr class="gold-divider" style="margin: 1.5rem auto;">
+            <p>As vagas para sessões individuais são limitadas para garantir a qualidade e presença plena da entrega energética.</p>
+            <button class="gold-btn-solid" (click)="whatsapp()">
+                <mat-icon svgIcon="whatsapp"></mat-icon>
+                AGENDAR MINHA SESSÃO
+            </button>
+            <p class="cta-reassurance">
+                <mat-icon>lock</mat-icon>
+                Sigilo absoluto · Espaço de acolhimento · Sem julgamentos
+            </p>
+        </div>
+    </section>
+
 </div>

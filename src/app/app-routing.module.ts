@@ -12,7 +12,7 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "sobre", component: AboutComponent },
-  { path: "servicos", component: ServicesComponent },
+  { path: 'servicos/:id', component: ServicesComponent },
   { path: "blog", component: BloggerComponent },
  
   { path: 'contato', component: ContatoComponent },

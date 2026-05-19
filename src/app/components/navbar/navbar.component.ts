@@ -13,11 +13,14 @@ export class NavbarComponent implements OnInit {
   isHidden: boolean = false;
   sidebarVisible: boolean = false;
 
+  menuItems: any[] = [];
+
   private lastScrollPosition: number = 0;
 
   constructor(private router: Router) { }
 
  ngOnInit() {
+    this.buildMenu();
     this.checkScroll();
 
     this.router.events
@@ -28,6 +31,28 @@ export class NavbarComponent implements OnInit {
         this.checkScroll();
       });
 }
+
+
+buildMenu() {
+    this.menuItems = [
+      { label: 'HOME', command: () => this.navigate('/') },
+      { label: 'SOBRE', command: () => this.navigate('/sobre') },
+      {
+        label: 'SERVIÇOS',
+        items: [
+          { label: 'Tarot Terapêutico', command: () => this.navigate('/servicos/tarot') },
+          { label: 'Sessões de Reiki', command: () => this.navigate('/servicos/reiki') },
+          { label: 'Mesa Radiônica', command: () => this.navigate('/servicos/mesa-radionica') },
+          { label: 'Cromoterapia', command: () => this.navigate('/servicos/cromoterapia') },
+          { label: 'Cristaloterapia', command: () => this.navigate('/servicos/cristaloterapia') },
+          { label: 'Limpeza Energética', command: () => this.navigate('/servicos/limpeza-energetica') },
+          { label: 'Alinhamento Vibracional', command: () => this.navigate('/servicos/alinhamento-vibracional') }
+        ]
+      },
+      { label: 'CONTATO', command: () => this.navigate('/contato') }
+    ];
+  }
+
 
 @HostListener('window:scroll', [])
 onWindowScroll() {

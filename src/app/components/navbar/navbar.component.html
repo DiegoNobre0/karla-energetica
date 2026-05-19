@@ -12,54 +12,23 @@
                 class="transition-duration-300 w-auto" [ngClass]="isScrolled ? 'h-4rem' : 'h-6rem md:h-8rem'">
         </div>
 
-        <div class="hidden md:flex align-items-center gap-4">
-            <button pButton pRipple label="HOME"
-                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
-                (click)="navigate('/')"></button>
-
-            <button pButton pRipple label="SOBRE"
-                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
-                (click)="navigate('/sobre')"></button>
-
-            <button pButton pRipple label="SERVIÇOS"
-                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
-                (click)="navigate('/servicos')"></button>
-
-            <button pButton pRipple label="CONTATO"
-                class="nav-link p-button-text font-medium text-lg tracking-wide transition-colors transition-duration-300"
-                (click)="navigate('/contato')"></button>
+        <div class="hidden md:block">
+            <p-menubar [model]="menuItems" styleClass="mystic-menubar"></p-menubar>
         </div>
 
         <div class="md:hidden block z-5">
-            <button pButton pRipple icon="pi pi-bars" class="p-button-rounded p-button-text p-button-lg"
+            <button pButton pRipple icon="pi pi-bars" class="p-button-rounded p-button-text p-button-lg text-gold" 
                 style="color: #d39e36;" (click)="sidebarVisible = true"></button>
         </div>
     </div>
 </div>
 
 <p-sidebar [(visible)]="sidebarVisible" position="right" [baseZIndex]="10000" styleClass="custom-sidebar">
-    
     <div class="flex flex-column align-items-center mt-2">
-        
         <img src="https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/IMG_4251.PNG" class="h-8rem mb-4 mt-0" alt="Logo Karla">
         
-        <div class="w-full flex flex-column gap-2">
-            
-            <button pButton pRipple label="HOME" 
-                    class="p-button-text mobile-nav-btn" 
-                    (click)="navigate('/')"></button>
-                    
-            <button pButton pRipple label="SOBRE" 
-                    class="p-button-text mobile-nav-btn" 
-                    (click)="navigate('/sobre')"></button>
-                    
-            <button pButton pRipple label="SERVIÇOS" 
-                    class="p-button-text mobile-nav-btn" 
-                    (click)="navigate('/servicos')"></button>
-                    
-            <button pButton pRipple label="CONTATO" 
-                    class="p-button-text mobile-nav-btn" 
-                    (click)="navigate('/contato')"></button>
+        <div class="w-full">
+            <p-panelMenu [model]="menuItems" styleClass="mystic-panelmenu"></p-panelMenu>
         </div>
     </div>
 </p-sidebar>

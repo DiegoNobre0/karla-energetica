@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { MenubarModule } from 'primeng/menubar';
+import { PanelMenuModule } from 'primeng/panelmenu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -39,13 +40,13 @@ import { AboutComponent } from './pages/about/about.component';
 
 import { ServicesComponent } from './pages/services/services.component';
 import { BloggerComponent } from './pages/blogger/blogger.component';
-import { PostBloggerComponent } from './pages/post-blogger/post-blogger.component';
+
 import { ContatoComponent } from './pages/contato/contato.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { WhatsappComponent } from './components/whatsapp/whatsapp.component';
 import { ApproveCommentComponent } from './components/approve-comment/approve-comment.component';
 import { RejectCommentComponent } from './components/reject-comment/reject-comment.component';
-
+import { MenuModule } from 'primeng/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,6 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
     AboutComponent,
     ServicesComponent,
     BloggerComponent,
-    PostBloggerComponent,
     ContatoComponent,
     WhatsappComponent,
     ApproveCommentComponent,
@@ -87,8 +87,10 @@ import { RejectCommentComponent } from './components/reject-comment/reject-comme
     MatTableModule,
     MaskedTextBoxModule,
     SidebarModule,
-    ButtonModule
-
+    ButtonModule,
+    MenuModule,
+    MenubarModule,
+    PanelMenuModule
   ],
   providers: [
     {

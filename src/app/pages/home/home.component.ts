@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit{
   }
 
   whatsapp(): void{    
-    const phoneNumber = '71992886118';
+    const phoneNumber = '71987141078';
     const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');

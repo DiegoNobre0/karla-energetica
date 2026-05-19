@@ -1,9 +1,9 @@
-/* --- VARIÁVEIS OFICIAIS DO BRAND BOARD --- */
-$color-navy: #051c48; // Azul Marinho Profundo
-$color-navy-dark: #030f28; // Azul Marinho mais escuro
-$color-gold: #d39e36; // Dourado Oficial
-$color-cream: #fcefd7; // Creme / Bege Claro
-$color-lilac-soft: rgba(194, 169, 209, 0.2); // Lilás sutil para efeitos
+/* --- VARIÁVEIS --- */
+$color-navy: #051c48;
+$color-navy-dark: #030f28;
+$color-gold: #d39e36;
+$color-cream: #fcefd7;
+$color-serene-blue: #d4e0fa;
 
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
@@ -15,7 +15,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero-about {
     position: relative;
     height: 50vh;
@@ -29,10 +29,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
     .hero-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0; // CORRIGIDO: era top/left/width/height
         background: rgba(5, 28, 72, 0.75);
     }
 
@@ -44,6 +41,7 @@ $font-montserrat: 'Montserrat', sans-serif;
             font-size: 3.5rem;
             color: #fff;
             margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle-montserrat {
@@ -54,19 +52,18 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- BIO SECTION COM CURVA --- */
+/* --- BIO SECTION --- */
 .bio-section {
-    background-color: $color-cream;
+    background-color: $color-serene-blue;
     color: $color-navy;
     padding: 6rem 10%;
     position: relative;
 
     &.div-curva {
-        border-bottom-right-radius: 40rem;
+        // CORRIGIDO: removido border-bottom-right-radius pois não tem efeito com clip-path ativo
         clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 
         @media (max-width: 960px) {
-            border-radius: 0;
             clip-path: none;
         }
     }
@@ -95,6 +92,7 @@ $font-montserrat: 'Montserrat', sans-serif;
         h2 {
             font-size: 2.8rem;
             margin: 0.5rem 0;
+            color: $color-navy-dark;
         }
 
         .tagline {
@@ -109,16 +107,21 @@ $font-montserrat: 'Montserrat', sans-serif;
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
             text-align: justify;
+            color: $color-navy;
+            font-weight: 400;
+        }
+
+        .div-button {
+            margin-top: 2rem;
         }
     }
 
     .bio-image {
         flex: 0.8;
-        position: relative;
 
         .image-frame {
             border: 8px solid #fff;
-            box-shadow: 20px 20px 0 $color-gold;
+            box-shadow: 20px 20px 0 $color-navy;
             border-radius: 15px;
             overflow: hidden;
 
@@ -128,22 +131,11 @@ $font-montserrat: 'Montserrat', sans-serif;
                 filter: sepia(20%);
             }
         }
-
-        .floating-symbol {
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 120px;
-            animation: float 4s ease-in-out infinite;
-
-            img {
-                width: 100%;
-            }
-        }
+        // CORRIGIDO: removido .floating-symbol — não existe no HTML
     }
 }
 
-/* --- FORMAÇÃO GRID --- */
+/* --- FORMAÇÃO --- */
 .formation-section {
     padding: 8rem 10% 5rem;
     text-align: center;
@@ -191,10 +183,17 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- CONSULTÓRIO GALLERY --- */
+/* --- GALERIA DO CONSULTÓRIO --- */
 .office-section {
     padding: 5rem 10% 8rem;
     text-align: center;
+    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%)); // CORRIGIDO: era hardcoded
+
+    .section-header p {
+        color: rgba(252, 239, 215, 0.6);
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
 
     .office-gallery {
         display: flex;
@@ -225,17 +224,18 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- BOTÃO CUSTOM --- */
+/* --- BOTÃO --- */
 .gold-card-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 15px;
     background-color: $color-navy;
-    color: $color-cream;
+    color: #fff;
     padding: 1rem 2rem;
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
+    font-family: $font-montserrat;
     transition: all 0.3s;
     border: 2px solid transparent;
 
@@ -254,17 +254,8 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 /* --- ANIMAÇÃO --- */
 @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-15px); }
 }
 
 /* --- AUXILIARES --- */
@@ -273,6 +264,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     letter-spacing: 2px;
 }
 
+// CORRIGIDO: uma única classe .text-gold com a cor correta (era navy-dark, e havia .text-gold-1 redundante)
 .text-gold {
     color: $color-gold !important;
 }
