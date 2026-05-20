@@ -1,9 +1,9 @@
 /* --- VARIÁVEIS --- */
-$color-navy: #051c48;
-$color-navy-dark: #030f28;
+$color-navy: #3d1f6e; // Roxo Profundo
+$color-navy-dark: #2a1050; // Roxo Super Escuro
 $color-gold: #d39e36;
 $color-cream: #fcefd7;
-$color-serene-blue: #d4e0fa;
+$color-serene-blue: #ede0f5; // Lavanda Claro
 
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
@@ -29,8 +29,8 @@ $font-montserrat: 'Montserrat', sans-serif;
 
     .hero-overlay {
         position: absolute;
-        inset: 0; // CORRIGIDO: era top/left/width/height
-        background: rgba(5, 28, 72, 0.75);
+        inset: 0;
+        background: rgba(61, 31, 110, 0.75); // Roxo Escuro Translúcido
     }
 
     .hero-content {
@@ -54,13 +54,12 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 /* --- BIO SECTION --- */
 .bio-section {
-    background-color: $color-serene-blue;
-    color: $color-navy;
+    background-color: $color-serene-blue; // Fundo Lavanda
+    color: $color-navy; // Letra Roxo Profundo
     padding: 6rem 10%;
     position: relative;
 
     &.div-curva {
-        // CORRIGIDO: removido border-bottom-right-radius pois não tem efeito com clip-path ativo
         clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 
         @media (max-width: 960px) {
@@ -131,7 +130,6 @@ $font-montserrat: 'Montserrat', sans-serif;
                 filter: sepia(20%);
             }
         }
-        // CORRIGIDO: removido .floating-symbol — não existe no HTML
     }
 }
 
@@ -187,7 +185,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 .office-section {
     padding: 5rem 10% 8rem;
     text-align: center;
-    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%)); // CORRIGIDO: era hardcoded
+    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%));
 
     .section-header p {
         color: rgba(252, 239, 215, 0.6);
@@ -254,8 +252,15 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 /* --- ANIMAÇÃO --- */
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-15px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 /* --- AUXILIARES --- */
@@ -264,7 +269,6 @@ $font-montserrat: 'Montserrat', sans-serif;
     letter-spacing: 2px;
 }
 
-// CORRIGIDO: uma única classe .text-gold com a cor correta (era navy-dark, e havia .text-gold-1 redundante)
 .text-gold {
     color: $color-gold !important;
 }

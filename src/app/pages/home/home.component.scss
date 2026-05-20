@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
 
 // --- VARIÁVEIS ---
-$color-navy: #051c48;
-$color-navy-darker: #030f28;
-$color-gold: #d39e36;
-$color-cream: #fcefd7;
+$color-navy: #3d1f6e; // Roxo Profundo
+$color-navy-darker: #2a1050; // Roxo Super Escuro
+$color-gold: #d39e36; // Dourado
+$color-cream: #fcefd7; // Creme
 $color-sage: #819c79;
 $color-lilac: #c2a9d1;
-$color-serene-blue: #d4e0fa;
+$color-serene-blue: #ede0f5; // Lavanda Claro
 
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
@@ -36,7 +36,9 @@ $font-montserrat: 'Montserrat', sans-serif;
     letter-spacing: 1px;
 }
 
-.text-gold { color: $color-gold !important; }
+.text-gold {
+    color: $color-gold !important;
+}
 
 .gold-divider {
     width: 150px;
@@ -69,7 +71,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     .hero-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(5, 28, 72, 0.7);
+        background: rgba(61, 31, 110, 0.7); // Roxo translúcido
         z-index: 1;
     }
 
@@ -84,14 +86,18 @@ $font-montserrat: 'Montserrat', sans-serif;
             color: #ffffff;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
-            @media (max-width: 768px) { font-size: 2.5rem; }
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
         }
 
         h2 {
             font-size: 1.5rem;
             color: $color-cream;
 
-            @media (max-width: 768px) { font-size: 1.2rem; }
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+            }
         }
 
         .hero-description {
@@ -129,12 +135,8 @@ $font-montserrat: 'Montserrat', sans-serif;
 
     .archangels-overlay {
         position: absolute;
-        inset: 0; // CORRIGIDO: era height: 100.1% (hack)
-        background: linear-gradient(
-            to bottom,
-            rgba(5, 28, 72, 0.6) 0%,
-            rgba(3, 15, 40, 0.9) 100%
-        );
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(61, 31, 110, 0.6) 0%, rgba(42, 16, 80, 0.9) 100%);
         z-index: 1;
     }
 
@@ -151,7 +153,9 @@ $font-montserrat: 'Montserrat', sans-serif;
             color: $color-gold;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 
-            @media (max-width: 768px) { font-size: 2rem; }
+            @media (max-width: 768px) {
+                font-size: 2rem;
+            }
         }
 
         .archangels-text {
@@ -171,7 +175,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 /* --- 3. SERVIÇOS --- */
 .services-section {
-    background-color: $color-serene-blue;
+    background-color: $color-serene-blue; // Lavanda claro
     padding: 6rem 2rem;
     width: 100%;
     text-align: center;
@@ -193,8 +197,13 @@ $font-montserrat: 'Montserrat', sans-serif;
         max-width: 1200px;
         margin: 0 auto;
 
-        @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
-        @media (max-width: 600px)  { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .services-cta {
@@ -202,10 +211,8 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 
     .glass-card {
-        // Fallback para browsers sem backdrop-filter
         background: rgba(255, 255, 255, 0.75);
 
-        // Progressive enhancement
         @supports (backdrop-filter: blur(10px)) {
             background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(10px);
@@ -217,13 +224,13 @@ $font-montserrat: 'Montserrat', sans-serif;
         padding: 2.5rem 1.5rem;
         cursor: pointer;
         transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(5, 28, 72, 0.05);
+        box-shadow: 0 4px 15px rgba(61, 31, 110, 0.08);
 
         &:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.8);
             border-color: $color-gold;
-            box-shadow: 0 10px 30px rgba(5, 28, 72, 0.15);
+            box-shadow: 0 10px 30px rgba(61, 31, 110, 0.2);
         }
 
         .icon-wrapper {
@@ -251,13 +258,33 @@ $font-montserrat: 'Montserrat', sans-serif;
             font-weight: 400;
         }
 
-        &.tarot-card      .icon-wrapper mat-icon { color: #8e68b0; }
-        &.reiki-card      .icon-wrapper mat-icon { color: #5a7a51; }
-        &.mesa-card       .icon-wrapper mat-icon { color: #4a6fa5; } // CORRIGIDO: era $color-navy (sumia no hover)
-        &.cristal-card    .icon-wrapper mat-icon { color: #b8861e; }
-        &.cromo-card      .icon-wrapper mat-icon { color: #c47d2e; }
-        &.limpeza-card    .icon-wrapper mat-icon { color: #7a6aa5; }
-        &.alinhamento-card .icon-wrapper mat-icon { color: #4a8a6f; }
+        &.tarot-card .icon-wrapper mat-icon {
+            color: #8e68b0;
+        }
+
+        &.reiki-card .icon-wrapper mat-icon {
+            color: #5a7a51;
+        }
+
+        &.mesa-card .icon-wrapper mat-icon {
+            color: #4a6fa5;
+        }
+
+        &.cristal-card .icon-wrapper mat-icon {
+            color: #b8861e;
+        }
+
+        &.cromo-card .icon-wrapper mat-icon {
+            color: #c47d2e;
+        }
+
+        &.limpeza-card .icon-wrapper mat-icon {
+            color: #7a6aa5;
+        }
+
+        &.alinhamento-card .icon-wrapper mat-icon {
+            color: #4a8a6f;
+        }
     }
 }
 
@@ -267,7 +294,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     align-items: center;
     gap: 4rem;
     padding: 5rem 10%;
-    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%)); // CORRIGIDO: era hardcoded
+    background: linear-gradient(to right, $color-navy, lighten($color-navy, 8%));
 
     @media (max-width: 960px) {
         flex-direction: column;
@@ -308,7 +335,6 @@ $font-montserrat: 'Montserrat', sans-serif;
 }
 
 /* --- BOTÕES --- */
-// CORRIGIDO: seletores específicos em vez de "button" global
 .gold-btn-outline {
     background: transparent;
     color: $color-gold;

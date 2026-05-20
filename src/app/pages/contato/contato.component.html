@@ -22,13 +22,13 @@
                 </p>
 
                 <div class="contact-items">
-                    <div class="item">
+                    <!-- <div class="item">
                         <mat-icon>mail</mat-icon>
                         <div>
                             <strong>E-mail</strong>
                             <p>contato@karlatavares.com.br</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="item">
                         <mat-icon>location_on</mat-icon>
@@ -59,42 +59,15 @@
 
             <div class="form-panel glass-panel">
                 <h2 class="title-cinzel">ENVIE UMA MENSAGEM</h2>
-                <p class="form-desc">Preencha os dados abaixo e responderei o mais rápido possível.</p>
+                <p class="form-desc">Preencha os dados abaixo para iniciarmos nossa conversa no WhatsApp.</p>
 
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mystic-form">
-
                     <div class="form-group">
-                        <input type="text" id="name" formControlName="name" placeholder="Seu nome completo">
+                        <input type="text" id="name" formControlName="name" placeholder="Seu nome">
                         <div class="error-container"
                             *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
                             <small class="error-msg"><i class="pi pi-exclamation-circle"></i> O nome é
                                 obrigatório.</small>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" formControlName="email" placeholder="Seu melhor e-mail">
-                        <div class="error-container"
-                            *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-                            <small class="error-msg" *ngIf="contactForm.get('email')?.errors?.['required']">
-                                <i class="pi pi-exclamation-circle"></i> O e-mail é obrigatório.
-                            </small>
-                            <small class="error-msg" *ngIf="contactForm.get('email')?.errors?.['email']">
-                                <i class="pi pi-exclamation-circle"></i> Digite um e-mail válido.
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="tel" id="number" formControlName="number" placeholder="Seu WhatsApp (com DDD)">
-                        <div class="error-container"
-                            *ngIf="contactForm.get('number')?.invalid && contactForm.get('number')?.touched">
-                            <small class="error-msg" *ngIf="contactForm.get('number')?.errors?.['required']">
-                                <i class="pi pi-exclamation-circle"></i> O número é obrigatório.
-                            </small>
-                            <small class="error-msg" *ngIf="contactForm.get('number')?.errors?.['pattern']">
-                                <i class="pi pi-exclamation-circle"></i> Formato de número inválido.
-                            </small>
                         </div>
                     </div>
 
@@ -109,7 +82,7 @@
                     </div>
 
                     <button type="submit" class="gold-btn-outline mt-3" [disabled]="contactForm.invalid">
-                        ENVIAR MENSAGEM <i class="pi pi-send ml-2"></i>
+                        ENVIAR VIA WHATSAPP <i class="pi pi-whatsapp ml-2" style="font-size: 1.2rem;"></i>
                     </button>
                 </form>
             </div>

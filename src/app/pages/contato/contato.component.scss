@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
 
 // --- VARIÁVEIS OFICIAIS DO BRAND BOARD ---
-$color-navy: #051c48;
-$color-navy-dark: #030f28;
-$color-gold: #d39e36;
-$color-cream: #fcefd7;
+$color-navy: #3d1f6e; // ← Era #051c48
+$color-navy-dark: #2a1050; // ← Era #030f28
+$color-gold: #d39e36; // ← Mantido
+$color-cream: #fcefd7; // ← Mantido
 $error-color: #ff6b6b;
 
 $font-cinzel: 'Cinzel', serif;
@@ -17,11 +17,10 @@ $font-montserrat: 'Montserrat', sans-serif;
     color: $color-cream;
     font-family: $font-montserrat;
     min-height: 100vh;
-    // Fundo estrelado imersivo para toda a página
     background-image: url('../../../assets/outer-space-background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; // Parallax leve
+    background-attachment: fixed;
     position: relative;
 
     &::before {
@@ -31,7 +30,7 @@ $font-montserrat: 'Montserrat', sans-serif;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(5, 28, 72, 0.85); // Máscara marinho
+        background: rgba(61, 31, 110, 0.85); // ← Era rgba(5, 28, 72, 0.85)
         z-index: 0;
     }
 }
@@ -123,10 +122,10 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 // --- PAINÉIS TRANSLÚCIDOS (GLASSMORPHISM) ---
 .glass-panel {
-    background: rgba(252, 239, 215, 0.05); // Creme translúcido
+    background: rgba(252, 239, 215, 0.05);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(211, 158, 54, 0.2); // Borda dourada sutil
+    border: 1px solid rgba(211, 158, 54, 0.2);
     border-radius: 15px;
     padding: 3rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -182,7 +181,6 @@ $font-montserrat: 'Montserrat', sans-serif;
         }
     }
 
-    // Redes Sociais
     .social-box {
         margin-bottom: 2rem;
 
@@ -236,8 +234,8 @@ $font-montserrat: 'Montserrat', sans-serif;
         input,
         textarea {
             width: 100%;
-            background: rgba(3, 15, 40, 0.5); // Marinho escuro translúcido
-            border: 1px solid rgba(211, 158, 54, 0.3); // Borda Dourada
+            background: rgba(42, 16, 80, 0.5); // ← Era rgba(3, 15, 40, 0.5)
+            border: 1px solid rgba(211, 158, 54, 0.3);
             color: $color-cream;
             padding: 15px 20px;
             border-radius: 8px;
@@ -253,7 +251,7 @@ $font-montserrat: 'Montserrat', sans-serif;
             &:focus {
                 outline: none;
                 border-color: $color-gold;
-                background: rgba(3, 15, 40, 0.8);
+                background: rgba(42, 16, 80, 0.8); // ← Era rgba(3, 15, 40, 0.8)
                 box-shadow: 0 0 15px rgba(211, 158, 54, 0.2);
             }
         }
@@ -333,10 +331,10 @@ $font-montserrat: 'Montserrat', sans-serif;
     }
 }
 
-/* --- AJUSTE ELEGANTE PARA O LINK DE ENDEREÇO --- */
+/* --- LINK DE ENDEREÇO --- */
 .address-link {
-    color: $color-cream !important; // Cor oficial Creme
-    text-decoration: none !important; // Remove o sublinhado
+    color: $color-cream !important;
+    text-decoration: none !important;
     font-family: $font-montserrat;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -344,22 +342,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     display: inline-block;
 
     &:hover {
-        color: $color-gold !important; // Fica Dourado no hover
-        text-shadow: 0 0 10px rgba(211, 158, 54, 0.4);
-    }
-}
-/* --- AJUSTE ELEGANTE PARA O LINK DE ENDEREÇO --- */
-.address-link {
-    color: $color-cream !important; // Cor oficial Creme
-    text-decoration: none !important; // Remove o sublinhado
-    font-family: $font-montserrat;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: inline-block;
-
-    &:hover {
-        color: $color-gold !important; // Fica Dourado no hover
+        color: $color-gold !important;
         text-shadow: 0 0 10px rgba(211, 158, 54, 0.4);
     }
 }

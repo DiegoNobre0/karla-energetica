@@ -12,13 +12,13 @@
                 <div class="contact-item">
                     <mat-icon>call</mat-icon>
                     <span>(71) 98714-1078</span> </div>
-                <div class="contact-item">
+                <!-- <div class="contact-item">
                     <mat-icon>mail</mat-icon>
                     <span>contato@karlatavares.com.br</span>
-                </div>
+                </div> -->
                 <div class="contact-item">
                     <mat-icon>location_on</mat-icon>
-                    <span>Atendimentos Online & Presenciais</span>
+                    <span> Rua Manga Rosa, 22 - Mangueiral, Camaçari - BA</span>
                 </div>
             </div>
         </div>
@@ -36,42 +36,30 @@
             </ul>
         </div>
 
-        <div class="footer-column">
-            <h3 class="footer-title">Envie uma Mensagem</h3>
-            
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mystic-form">
-                
-                <div class="form-group">
-                    <input type="text" formControlName="name" placeholder="Seu nome">
-                    <small class="error-msg" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
-                        O campo nome é obrigatório.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <input type="email" formControlName="email" placeholder="Seu e-mail">
-                    <small class="error-msg" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-                        Insira um e-mail válido.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <input type="tel" formControlName="number" placeholder="Seu WhatsApp">
-                    <small class="error-msg" *ngIf="contactForm.get('number')?.invalid && contactForm.get('number')?.touched">
-                        Número inválido ou obrigatório.
-                    </small>
-                </div>
-
-                <div class="form-group">
-                    <textarea formControlName="message" rows="4" placeholder="Como posso te ajudar na sua jornada?"></textarea>
-                    <small class="error-msg" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-                        A mensagem é obrigatória.
-                    </small>
-                </div>
-
-                <button type="submit" class="gold-btn-solid">Enviar Mensagem</button>
-            </form>
+       <div class="footer-column">
+    <h3 class="footer-title">Envie uma Mensagem</h3>
+    
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mystic-form">
+        
+        <div class="form-group">
+            <input type="text" formControlName="name" placeholder="Seu nome">
+            <small class="error-msg" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                O campo nome é obrigatório.
+            </small>
         </div>
+
+        <div class="form-group">
+            <textarea formControlName="message" rows="4" placeholder="Como posso te ajudar na sua jornada?"></textarea>
+            <small class="error-msg" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+                A mensagem é obrigatória.
+            </small>
+        </div>
+
+        <button type="submit" class="gold-btn-solid" [disabled]="contactForm.invalid">
+            <i class="pi pi-whatsapp" style="margin-right: 8px;"></i> Enviar via WhatsApp
+        </button>
+    </form>
+</div>
 
     </div>
 

@@ -1,19 +1,19 @@
 /* --- VARIÁVEIS OFICIAIS DO BRAND BOARD --- */
-$color-navy: #051c48;          // Azul Marinho Profundo (Base)
-$color-navy-darker: #030f28;   // Azul Marinho Super Escuro (Para o Footer)
-$color-gold: #d39e36;          // Dourado Oficial
-$color-cream: #fcefd7;         // Creme / Bege Claro
+$color-navy: #3d1f6e;          // ← Era #051c48
+$color-navy-darker: #2a1050;   // ← Era #030f28
+$color-gold: #d39e36;          // ← Mantido
+$color-cream: #fcefd7;         // ← Mantido
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
-$error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
+$error-color: #ff6b6b;
 
 /* --- ESTRUTURA PRINCIPAL --- */
 .karlinha-footer {
-    background-color: $color-navy-darker; 
+    background-color: $color-navy-darker;
     color: $color-cream;
     font-family: $font-montserrat;
     padding-top: 5rem;
-    border-top: 2px solid rgba(211, 158, 54, 0.3); // Linha Dourada
+    border-top: 2px solid rgba(211, 158, 54, 0.3);
 
     .footer-container {
         max-width: 1200px;
@@ -32,7 +32,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
 
     /* --- COLUNA 1: SOBRE --- */
     .footer-logo {
-        width: 140px; 
+        width: 140px;
         margin-bottom: 1.5rem;
     }
 
@@ -40,7 +40,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
         font-size: 0.95rem;
         line-height: 1.7;
         margin-bottom: 2rem;
-        color: rgba(252, 239, 215, 0.8); // Texto Creme Suave
+        color: rgba(252, 239, 215, 0.8);
         text-align: left;
     }
 
@@ -55,7 +55,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
             gap: 12px;
 
             mat-icon {
-                color: $color-gold; // Ícones Dourados
+                color: $color-gold;
             }
 
             span {
@@ -66,10 +66,10 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
         }
     }
 
-    /* --- COLUNA 2: ESPECIALIDADES (Terapias) --- */
+    /* --- COLUNA 2: ESPECIALIDADES --- */
     .footer-title {
-        font-family: $font-cinzel; 
-        color: $color-gold; // Títulos Dourados
+        font-family: $font-cinzel;
+        color: $color-gold;
         font-size: 1.8rem;
         margin-top: 0;
         margin-bottom: 2rem;
@@ -102,7 +102,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
         }
     }
 
-    /* --- COLUNA 3: FORMULÁRIO GLASSMORPHISM (MÍSTICO) --- */
+    /* --- COLUNA 3: FORMULÁRIO --- */
     .mystic-form {
         display: flex;
         flex-direction: column;
@@ -115,8 +115,8 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
 
         input, textarea {
             width: 100%;
-            background: rgba(252, 239, 215, 0.05); // Fundo Vidro Creme Translúcido
-            border: 1px solid rgba(211, 158, 54, 0.2); // Borda dourada suave
+            background: rgba(252, 239, 215, 0.05);
+            border: 1px solid rgba(211, 158, 54, 0.2);
             color: $color-cream;
             padding: 14px 15px;
             border-radius: 8px;
@@ -126,14 +126,14 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
             transition: all 0.3s ease;
 
             &::placeholder {
-                color: rgba(252, 239, 215, 0.5); // Placeholder Creme Suave
+                color: rgba(252, 239, 215, 0.5);
             }
 
             &:focus {
                 outline: none;
                 border-color: $color-gold;
                 background: rgba(252, 239, 215, 0.08);
-                box-shadow: 0 0 15px rgba(211, 158, 54, 0.15); 
+                box-shadow: 0 0 15px rgba(211, 158, 54, 0.15);
             }
         }
 
@@ -151,7 +151,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
 
         .gold-btn-solid {
             background: $color-gold;
-            color: $color-navy-darker; // Contraste marinho no botão
+            color: $color-navy-darker;
             border: none;
             padding: 15px;
             border-radius: 30px;
@@ -175,7 +175,7 @@ $error-color: #ff6b6b;         // Vermelho Suave para erro (manter)
     .footer-bottom {
         text-align: center;
         padding: 1.5rem;
-        background-color: #020a1c; // Fundo de base quase preto
+        background-color: #1a0838; // ← Era #020a1c (roxo quase preto)
         border-top: 1px solid rgba(211, 158, 54, 0.1);
         font-size: 0.85rem;
         color: rgba(252, 239, 215, 0.6);

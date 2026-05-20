@@ -10,35 +10,33 @@ import { EmailService } from 'src/app/services/email.service';
 export class FooterComponent {
   constructor(
     private fb: FormBuilder,
-    private emailService: EmailService  
+    private emailService: EmailService
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      number: ['', [Validators.required, Validators.pattern('^\\d{2}\\d{4,5}\\d{4}$')]],
       message: ['', Validators.required]
-    }); 
+    });
   }
 
   contactForm: FormGroup;
 
 
-  onSubmit(): void {
-    if (this.contactForm.invalid) {
-      this.contactForm.markAllAsTouched();
-     
-    } else {      
-      this.emailService.postEmail(this.contactForm.value).subscribe(
-        () => {         
-          alert('E-mail enviado com sucesso!');
-          this.contactForm.reset(); 
-        },
-        (error) => {
-          console.error('Erro ao postar comentário:', error);
-          alert('Erro ao enviar o e-mail. Por favor, tente novamente mais tarde.');
-        }
-      );
-      
+  onSubmit() {
+    if (this.contactForm.valid) {
+      const nome = this.contactForm.get('name')?.value;
+      const mensagem = this.contactForm.get('message')?.value;
+
+      // Número da cliente (com o DDI 55 do Brasil)
+      const phoneNumber = '5571987141078';
+
+      // Formata a mensagem para o WhatsApp com quebra de linha
+      const textoFormatado = encodeURIComponent(`Olá, me chamo ${nome}!\n\n${mensagem}`);
+
+      // Abre o WhatsApp em uma nova aba
+      window.open(`https://wa.me/${phoneNumber}?text=${textoFormatado}`, '_blank');
+
+      // Opcional: Limpa o formulário após o envio
+      this.contactForm.reset();
     }
   }
 

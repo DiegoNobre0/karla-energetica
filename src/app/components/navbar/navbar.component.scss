@@ -1,9 +1,8 @@
-/* --- IMPORTAÇÃO DE FONTES --- */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
 
-$color-navy: #051c48;          
-$color-gold: #d39e36;          
-$color-cream: #fcefd7;         
+$color-navy: #3d1f6e;          // ← Era #051c48
+$color-gold: #d39e36;          // ← Mantido
+$color-cream: #fcefd7;         // ← Mantido
 $font-cinzel: 'Cinzel', serif;
 $font-montserrat: 'Montserrat', sans-serif;
 
@@ -14,20 +13,20 @@ $font-montserrat: 'Montserrat', sans-serif;
 .nav-hidden { transform: translateY(-100%); }
 
 .nav-scrolled-state {
-    background-color: rgba(5, 28, 72, 0.95); 
+    background-color: rgba(61, 31, 110, 0.95); // ← Era rgba(5, 28, 72, 0.95)
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(211, 158, 54, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    padding-top: 0.5rem; 
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 
 .nav-transparent-state {
-    background-color: transparent; 
+    background-color: transparent;
     border-bottom: 1px solid transparent;
     box-shadow: none;
-    padding-top: 1.5rem; 
+    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
 
@@ -39,13 +38,10 @@ $font-montserrat: 'Montserrat', sans-serif;
     border: none !important;
     padding: 0 !important;
 
-    // Força o fundo da nova div invisível do PrimeNG a ser transparente
     .p-menuitem-content {
         background: transparent !important;
     }
 
-    // Itens principais (Home, Sobre, Serviços, Contato)
-    // Retirei o símbolo ">" para abraçar qualquer estrutura que o PrimeNG montar
     .p-menubar-root-list > .p-menuitem .p-menuitem-link {
         background: transparent !important;
         box-shadow: none !important;
@@ -54,26 +50,25 @@ $font-montserrat: 'Montserrat', sans-serif;
 
         .p-menuitem-text, .p-submenu-icon {
             font-family: $font-montserrat !important;
-            color: $color-gold !important; // AQUI: Forçando a cor Dourada!
+            color: $color-gold !important;
             font-weight: 600 !important;
-            font-size: 1.25rem !important; // Fonte aumentada
+            font-size: 1.25rem !important;
             letter-spacing: 1.5px !important;
             transition: all 0.3s ease !important;
         }
 
-        // Efeito de Hover: Branco Iluminado
         &:hover, &:focus, &:active {
             background: transparent !important;
             .p-menuitem-text, .p-submenu-icon {
-                color: #ffffff !important; 
+                color: #ffffff !important;
                 text-shadow: 0 0 15px rgba(211, 158, 54, 0.8) !important;
             }
         }
     }
 
-    // Dropdown (A caixa que abre)
+    // Dropdown
     .p-submenu-list {
-        background: rgba(5, 28, 72, 0.95) !important;
+        background: rgba(61, 31, 110, 0.95) !important; // ← Era rgba(5, 28, 72, 0.95)
         backdrop-filter: blur(10px) !important;
         border: 1px solid rgba(211, 158, 54, 0.3) !important;
         border-radius: 8px !important;
@@ -83,17 +78,17 @@ $font-montserrat: 'Montserrat', sans-serif;
 
         .p-menuitem {
             background: transparent !important;
-            
+
             .p-menuitem-link {
                 background: transparent !important;
                 padding: 1rem 1.5rem !important;
                 transition: all 0.3s ease !important;
-                box-shadow: none !important; 
-                outline: none !important; 
-                
+                box-shadow: none !important;
+                outline: none !important;
+
                 .p-menuitem-text {
                     font-family: $font-montserrat !important;
-                    color: $color-cream !important; 
+                    color: $color-cream !important;
                     font-size: 1.1rem !important;
                 }
 
@@ -103,9 +98,9 @@ $font-montserrat: 'Montserrat', sans-serif;
                     outline: none !important;
                     .p-menuitem-text { color: $color-cream !important; }
                 }
-                
+
                 &:hover {
-                    background: rgba(211, 158, 54, 0.15) !important; 
+                    background: rgba(211, 158, 54, 0.15) !important;
                     cursor: pointer !important;
                     .p-menuitem-text { color: $color-gold !important; }
                 }
@@ -113,18 +108,19 @@ $font-montserrat: 'Montserrat', sans-serif;
         }
     }
 }
+
 /* =========================================================
    2. MOBILE: CUSTOMIZAÇÃO DO P-PANELMENU E SIDEBAR
 ========================================================= */
 ::ng-deep .custom-sidebar {
-    background-color: $color-navy !important; 
+    background-color: $color-navy !important; // ← Já usa a variável, atualiza sozinho
     width: 300px !important;
     border-left: 3px solid $color-gold !important;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6) !important;
 
     .p-sidebar-close {
         width: 3rem !important; height: 3rem !important;
-        color: $color-gold !important; 
+        color: $color-gold !important;
         background: transparent !important;
         border-radius: 50%;
         top: 1rem !important; right: 1rem !important;
@@ -135,10 +131,8 @@ $font-montserrat: 'Montserrat', sans-serif;
     .p-sidebar-content { padding: 2rem 1.5rem !important; }
 }
 
-// O Sanfonado Mobile
 ::ng-deep .mystic-panelmenu {
-    
-    // Níveis Principais
+
     .p-panelmenu-header {
         .p-panelmenu-header-content {
             background: transparent !important;
@@ -158,8 +152,8 @@ $font-montserrat: 'Montserrat', sans-serif;
 
             .p-menuitem-text {
                 font-family: $font-cinzel !important;
-                font-size: 1.4rem !important; // AQUI: Aumentei a fonte no mobile
-                color: $color-gold !important; // AQUI: Base Dourada no mobile
+                font-size: 1.4rem !important;
+                color: $color-gold !important;
                 font-weight: 600 !important;
                 width: 100%;
                 text-align: center;
@@ -170,16 +164,15 @@ $font-montserrat: 'Montserrat', sans-serif;
 
             &:hover, &:focus {
                 .p-menuitem-text, .p-submenu-icon {
-                    color: #ffffff !important; // Fica branco no hover do celular
+                    color: #ffffff !important;
                     letter-spacing: 2px;
                 }
             }
         }
     }
 
-    // Nível Expansível (Submenu)
     .p-panelmenu-content {
-        background: rgba(3, 15, 40, 0.5) !important;
+        background: rgba(42, 16, 80, 0.5) !important; // ← Era rgba(3, 15, 40, 0.5)
         border: none !important;
         border-left: 2px solid $color-gold !important;
         margin: 0 1rem 1rem 1rem;
@@ -195,7 +188,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
             .p-menuitem-text {
                 font-family: $font-montserrat !important;
-                color: rgba(252, 239, 215, 0.8) !important; // Creme suave
+                color: rgba(252, 239, 215, 0.8) !important;
                 font-size: 1.1rem !important;
             }
 
