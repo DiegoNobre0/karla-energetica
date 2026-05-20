@@ -17,7 +17,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     color: $color-cream;
     font-family: $font-montserrat;
     min-height: 100vh;
-    background-image: url('../../../assets/outer-space-background.jpg');
+    background-image: url('https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/7f8b1090-7dda-404a-88f9-ed3e59a1e886.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -30,7 +30,8 @@ $font-montserrat: 'Montserrat', sans-serif;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(61, 31, 110, 0.85); // ← Era rgba(5, 28, 72, 0.85)
+        // background: rgba(61, 31, 110, 0.85); 
+        background: rgba(61, 31, 110, 0.31);  
         z-index: 0;
     }
 }
@@ -234,7 +235,8 @@ $font-montserrat: 'Montserrat', sans-serif;
         input,
         textarea {
             width: 100%;
-            background: rgba(42, 16, 80, 0.5); // ← Era rgba(3, 15, 40, 0.5)
+            // background: rgba(42, 16, 80, 0.5); 
+            background: rgba(0, 0, 0, 0.44); 
             border: 1px solid rgba(211, 158, 54, 0.3);
             color: $color-cream;
             padding: 15px 20px;
@@ -246,12 +248,14 @@ $font-montserrat: 'Montserrat', sans-serif;
 
             &::placeholder {
                 color: rgba(252, 239, 215, 0.4);
+                
             }
 
             &:focus {
                 outline: none;
                 border-color: $color-gold;
-                background: rgba(42, 16, 80, 0.8); // ← Era rgba(3, 15, 40, 0.8)
+                background: rgba(0, 0, 0, 0.44); 
+                // background: rgba(42, 16, 80, 0.8);
                 box-shadow: 0 0 15px rgba(211, 158, 54, 0.2);
             }
         }
