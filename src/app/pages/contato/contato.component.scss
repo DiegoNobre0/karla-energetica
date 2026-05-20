@@ -20,7 +20,7 @@ $font-montserrat: 'Montserrat', sans-serif;
     background-image: url('https://pub-72dc93fc334e4d3f84eb4bfabf9eff67.r2.dev/7f8b1090-7dda-404a-88f9-ed3e59a1e886.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     position: relative;
 
     &::before {
